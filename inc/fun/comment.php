@@ -76,7 +76,7 @@ function pk_comment_callback($comment, $args, $depth)
             <div class="comment-os c-sub">
                 <?php
                 if (pk_is_checked('comment_show_ua', true)):
-                    $commentUserAgent = \donatj\UserAgent\parse_user_agent($comment->comment_agent);
+                    $commentUserAgent = \donatj\UserAgent\parse_user_agents($comment->comment_agent);
                     $commentOsIcon = pk_get_comment_ua_os_icon($commentUserAgent['platform']);
                     $commentBrowserIcon = pk_get_comment_ua_os_icon($commentUserAgent['browser']);
                     echo "<span class='mt10' title='{$commentUserAgent['platform']}'><i class='$commentOsIcon'></i>&nbsp;<span>{$commentUserAgent['platform']}&nbsp;</span></span>";
